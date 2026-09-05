@@ -40,3 +40,5 @@ jobs:
         run: python experiments/gate12_reward_nonidentifiability.py
       - name: Gate 13 — selection masquerades as preference
         run: python experiments/gate13_selection_masquerades_as_preference.py
+      - name: Gate 14 — slow prior fast correction
+        run: python experiments/gate14_slow_prior_fast_correction.py

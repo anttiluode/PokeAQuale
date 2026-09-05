@@ -1,151 +1,158 @@
 # Executed gates — what survived, what died
 
-The purpose of this ledger is to prevent the philosophical vocabulary from outrunning the executable result.
+The purpose of this ledger is to prevent the philosophical vocabulary from outrunning the executable result. Every gate is a finite / synthetic mechanism test. None is evidence of consciousness or subjective experience.
 
-Every gate below is a finite / synthetic mechanism test. None is evidence that the tested system is conscious or that the operational object is identical to phenomenal experience.
-
-| gate | attacker / question | result | status of the idea |
+| gate | attacker / question | result | status |
 |---|---|---|---|
-| G0 | Can raw code relabeling destroy the candidate? Does action identity matter? | raw-code cross-embodiment identity `0%`; action-bound poke identity `100%`; passive and unordered-response attackers `50%` | Action-conditioned response geometry can be coordinate-invariant in this toy. |
-| G1 | Does adding actions change the world partition while world + passive sensor stay fixed? | operational classes `1 → 2 → 4 → 8` | The quotient is embodiment/action-repertoire relative. |
-| G2 | Are passive, one-step, or unordered statistics enough? | all `50%`; ordered two-step predictive profile `100%` | Multi-step action-conditioned history contains distinctions erased by cheaper summaries. |
-| G3 | Does efference distinguish SELF from a matched WORLD event? | sensory/unordered `50%`; command→consequence lag `100%`; perfect external mimic remains `50%` | Efference helps only when causal stories differ operationally. |
-| G4 | Can remembered counterfactuals manufacture current evidence? | relation memory still needs `40` pokes; stable key lookup `8`; stale remapped lookup `0%` | **Negative.** Memory does not create missing observation. |
-| G5 | Can active discovery become later zero-poke perception? | compiled passive route `100%`; ordinary supervised centroid identical; old compiler after remap `0%`, active route `100%` | Active identification can teach a shortcut, but ordinary distillation explains it here. |
-| G6 | Can complete action-conditioned structure settle an inverted / permuted spectrum? | `6` zero-error isomorphisms; one external anchor collapses to `1` | **Stopping line.** Structure fixes relations, not absolute semantic origin. |
-| G7 | Can passive geometry align different embodiments? | honest geometry `100%`; perfectly isometric false-friend geometry `0%` semantic correspondence; causal consequence restores `100%` | Passive geometry can win or be exactly wrong about cause. |
-| G8 | Is a homeostatic anchor privileged over matched external information? | BODY and matched BEACON break symmetry equally | **Negative on privilege.** Endogenous naming is not mathematical privilege. |
-| G9 | Which correlated variable actually changes future action/sensing capacity? | passive/current/history `50%`; decoupling identifies driver `100%`; external causal clone restores internal/external ambiguity | **Positive but ordinary.** Intervention-based system identification. |
-| G10 | Does hand-labelled SELF beat generic causal abstraction? | SELF `100%`; generic no-SELF bottleneck also `100%` after `3` interventions at same model size; REMOTE driver works equally | **SELF loses as computational primitive here.** Useful object is a causal sufficient statistic. |
-| G11 | Does future-affordance causality define good/bad? | same dynamics: empowerment/viability choose `PRESERVE`; task/reversed viability choose `COLLAPSE`; utility inversion flips policy | **Hard negative.** Causal consequence is not canonical valence. |
-| G12 | Can behavior reveal a unique reward? | three rewards fit same optimal policy; one preference query removes one; BASE and potential-shaped BASE remain numerically different yet preference/policy equivalent | **Hard negative.** Behavior constrains a reward equivalence class. |
-| G13 | Can evolutionary selection make a population look as if individuals value viability? | old regime: explicit noisy viability planner and reward-free selection-only population both `90% PRESERVE / 10% COLLAPSE`; after survival-map reversal planner immediately becomes `10/90`, selection-only stays `90/10` and survives at only `10%`; after differential survival + reproduction the next selection-only generation becomes `10/90` | **Yes.** Mature survival-oriented behavior does not prove a represented objective. A temporal intervention exposes planner adaptation versus generational filtering. |
+| G0 | Does raw-code relabeling destroy identity? | raw code `0%`; action-bound poke identity `100%` | Action-conditioned response geometry can be coordinate-invariant. |
+| G1 | Does action repertoire change operational state? | classes `1 → 2 → 4 → 8` | Operational quotient is embodiment-relative. |
+| G2 | Are passive / one-step / unordered summaries enough? | all `50%`; ordered two-step profile `100%` | Temporal counterfactual structure matters. |
+| G3 | Does efference create a SELF distinction? | bound lag `100%`; perfect external mimic still `50%` | Causal attribution only when causal stories differ. |
+| G4 | Can memory manufacture missing present evidence? | relation memory still needs `40` pokes; stable key lookup needs `8` | **No.** Memory needs a current handle. |
+| G5 | Can active discovery become zero-poke recognition? | compiled route `100%`; ordinary supervised learner identical | Useful distillation, no special machinery. |
+| G6 | Can relational structure settle an inverted spectrum? | `6` exact isomorphisms; external anchor reduces to `1` | **Stopping line.** No absolute semantic origin from preserved relations. |
+| G7 | Can passive geometry align embodiments? | honest geometry `100%`; exact false-friend geometry `0%` causal correspondence | Geometry can align or confidently mislead. |
+| G8 | Is homeostasis privileged over matched external information? | BODY and BEACON break symmetry equally | **No privilege from naming/location.** |
+| G9 | Which correlated variable changes future affordances? | passive `50%`; decoupling intervention `100%`; external causal clone restores location ambiguity | Standard causal identification. |
+| G10 | Does labelled SELF beat generic causal abstraction? | both `100%`; generic model pays `3` interventions and finds same bottleneck | **SELF adds no computational primitive here.** |
+| G11 | Does affordance preservation define good/bad? | same dynamics support opposite policies under different objectives | **No canonical valence from causal structure.** |
+| G12 | Can behavior reveal unique reward? | policy + preference evidence still leaves BASE and shaped BASE equivalent | **Reward is identified only up to an equivalence class.** |
+| G13 | Can selection look like within-agent preference? | equilibrium snapshot identical; survival-map reversal reveals immediate planner adaptation vs one-generation selection lag | **Yes.** Fitness filtering is not a represented objective. |
+| G14 | Can slow history reduce probe cost without making the prior dictate truth? | pre-shift: hybrid `100%` accuracy at `1.3` probes vs uniform active `1.667`; stale prior immediately after shift stays `100%` accurate but costs `1.9` probes while fixed-prior-only accuracy falls to `10%`; after slow update hybrid returns to `1.3`, matching oracle order | **Positive.** Slow history can compile search order; fast interventions preserve correctness under shift. Ordinary sequential testing explains the mechanism. |
 
-## The hypothesis after thirteen attacks
+## After fourteen attacks
 
-The executable core is now much less philosophical and much more useful:
-
-```text
-bounded observation
- -> intervene when evidence is insufficient
- -> identify action-conditioned causal state
- -> compress stable causal relations into cheap predictors
- -> re-ground when shortcuts fail
- -> discover variables controlling future affordances
- -> plan relative to explicit / inferred objective classes
- -> separate within-lifetime control from population-level selection
-```
-
-The strongest computational claim presently earned is:
-
-> **Intervention can recover comparatively invariant causal state from ambiguous representations; stable causal state can be compressed into cheap predictors; slow population history and fast within-lifetime inference are distinct mechanisms and can be separated by perturbation.**
-
-The hard fences now read:
-
-```text
-causal structure    != semantic origin
-causal role         != SELF
-future affordance   != valence
-behavior            != unique reward
-survival selection  != represented objective
-represented objective != phenomenology
-```
-
-That is a better research result than a loose qualia story.
-
-## Gate 13 result — evolution can fake the appearance of caring
-
-The test deliberately makes the mature snapshot identical under two mechanisms.
-
-In the original survival regime, `PRESERVE` survives. The explicit planner chooses the currently viable action with `10%` execution noise. The selection-only population contains fixed inherited controllers, no reward and no learning; survivors reproduce with `10%` mutation.
-
-Both mature populations therefore look exactly like:
-
-```text
-PRESERVE  90%
-COLLAPSE  10%
-```
-
-From that snapshot alone, `this population behaves as if it values survival` is true descriptively but does not identify the mechanism.
-
-Then the survival mapping is reversed.
-
-```text
-                    immediately after reversal
-explicit planner    10% PRESERVE / 90% COLLAPSE
-selection only      90% PRESERVE / 10% COLLAPSE
-```
-
-The planner survives the first exposure at `90%`; the inherited selection-only population at only `10%`. Differential survival leaves the COLLAPSE lineage, and its offspring with `10%` mutation produce the new `10/90` distribution one generation later.
-
-So selection can create the *appearance* of a viability preference without a within-agent viability representation. The difference becomes visible when the environment changes faster than heredity can track it.
-
-The narrow result earned is:
-
-> **Evolutionary filtering and within-lifetime valuation can be behaviorally identical at equilibrium yet causally distinct under temporal intervention.**
-
-No evolutionary fitness variable is thereby felt valence.
-
-## Gate 14 preregistration — let slow history tune inquiry, not truth
-
-There is a constructive result hiding behind G13.
-
-Slow selection / adaptation can legitimately provide a **prior over which causal hypotheses are worth testing first**, while fast intervention remains responsible for correcting that prior when the current world differs.
-
-That gives a clean fast/slow architecture:
+The project has converged on a computational architecture considerably more defensible than the original qualia language:
 
 ```text
 slow history
-  -> prior over likely causal drivers / useful probes
+   -> prior / probe ordering
 
-fast episode
-  -> cheap first probe chosen from prior
-  -> prediction error / contradiction
-  -> additional interventions only when needed
-  -> current causal identification
+medium stable representation
+   -> cheap prediction / cache
+
+fast current interaction
+   -> intervene when needed
+   -> identify current causal state
+   -> override stale prior or cache
 ```
 
-Gate 14 should compare three agents across a family of environments where one of several variables controls future affordance and the dominant driver changes occasionally:
+The important principle is:
 
-```text
-1. FIXED PRIOR ONLY
-   cheap, brittle
+> **The prior may choose which question is cheap to ask first. Evidence still chooses the answer.**
 
-2. UNIFORM ACTIVE IDENTIFICATION
-   robust, but pays every probe
+G14 makes that concrete. Before the distribution shift, a historical prior `V1 > V0 > V2` reduces expected intervention cost from the uniform active searcher's `5/3 ≈ 1.667` probes to `1.3`, with perfect identification. When the world abruptly becomes V2-dominant, the stale hybrid remains perfectly correct because contradiction triggers further probing; it merely becomes temporarily more expensive at `1.9` probes. A prior-only guesser costs nothing but collapses to `10%` accuracy. Updating the slow prior to the new distribution restores the hybrid to `1.3` probes, equal to the oracle ordering.
 
-3. SLOW-PRIOR + FAST-CORRECTION
-   tries historically likely probes first,
-   but falls back to active identification on contradiction
-```
-
-Mandatory metrics:
-
-- causal-driver accuracy;
-- average paid interventions;
-- performance on common environments;
-- performance immediately after distribution shift;
-- recovery cost after shift;
-- fixed-prior failure rate;
-- comparison against an oracle ordering of probes.
-
-Kill conditions:
-
-- if the hybrid cannot reduce intervention cost while retaining the uniform learner's accuracy, slow history added nothing useful;
-- if the hybrid fails permanently after a shift, it is just a brittle inherited shortcut;
-- if a generic Bayesian / sequential-testing account explains the result, say so plainly;
-- no prior, error signal or objective is to be promoted to qualia.
-
-The narrow positive result worth earning is:
+So the useful result is not mysterious:
 
 > **Slow experience can compile an intervention policy that makes recurrent causal identification cheaper, while fast counterfactual testing preserves adaptability when the world changes.**
 
-That would reconnect PokeAQuale directly to the broader bounded-observer / fast-medium-slow architecture without smuggling consciousness back in.
+This is sequential testing / active diagnosis. That mundane description is a strength, because it connects directly to the bounded-observer line elsewhere in the repos.
 
-## Current boundary
+## What survived from the original PokeAQuale idea
 
-PokeAQuale now has a useful positive program: intervention-defined causal identity, cheap learned prediction, causal bottlenecks, and multiscale adaptation.
+A fairly coherent core survived the attacks:
 
-It also has explicit stopping lines for semantic origin, self labels, valence, reward identity, and evolutionary fitness.
+```text
+1. passive representations can alias or mislead;
+2. intervention can expose hidden causal distinctions;
+3. action-conditioned futures give an operational identity;
+4. stable identities can be compiled into cheaper predictors;
+5. those predictors need invalidation / re-grounding under drift;
+6. slow statistics can optimize the order and cost of future interventions;
+7. exact operational equivalence remains a stopping line.
+```
 
-The repo can study all of those computational mechanisms. It still has no executable bridge from them to subjective experience.
+What did **not** survive as earned claims:
+
+```text
+operational identity -> quale
+causal bottleneck    -> SELF
+homeostasis          -> intrinsic valence
+survival             -> represented objective
+behavior             -> unique reward
+fitness / reward     -> felt experience
+```
+
+The repo has therefore become more useful while becoming less of a consciousness theory.
+
+## Gate 15 preregistration — put the three timescales in one observer
+
+G14 tests only the slow-prior / fast-probe pair. Gate 15 should combine the pieces into one end-to-end bounded observer and see whether they actually compose.
+
+World:
+
+```text
+persistent epochs
+  -> passive context usually predicts the causal driver
+  -> occasional abrupt remap / operator shift
+  -> same passive key can become stale
+```
+
+Observer:
+
+```text
+FAST
+  active causal probes when uncertainty / prediction error is high
+
+MEDIUM
+  cache passive-context -> poke-confirmed causal identity
+
+SLOW
+  empirical prior over likely drivers / useful probe order
+```
+
+Attackers:
+
+```text
+ALWAYS ACTIVE
+  robust, expensive
+
+CACHE ONLY
+  cheap, catastrophically stale after remap
+
+PRIOR ONLY
+  cheapest, guesses dominant cause
+
+FAST + MEDIUM
+  learns shortcuts but has no optimized probe ordering
+
+FAST + MEDIUM + SLOW
+  full three-timescale observer
+```
+
+Required measurements:
+
+- causal-identification accuracy;
+- interventions per episode;
+- errors in the first episodes after remap;
+- time / probes to detect drift;
+- cache invalidations;
+- steady-state cost;
+- cumulative cost over long stable epochs plus shifts.
+
+Kill conditions:
+
+- if `FAST + MEDIUM + SLOW` does not beat `FAST + MEDIUM` in cumulative probe cost at equal accuracy, the slow layer is ornamental;
+- if it cannot beat `ALWAYS ACTIVE` over stable epochs, compilation is useless;
+- if stale cache causes unobserved wrong answers, uncertainty/change detection is inadequate;
+- if a standard adaptive diagnosis/cache-invalidation account explains the whole result, that is the correct description.
+
+The narrow target is:
+
+> **A bounded observer can amortize expensive causal identification across recurrent experience without surrendering the ability to re-ground itself after its cheap representation becomes stale.**
+
+That is an engineering claim worth keeping even if the repo is eventually renamed.
+
+## Current stopping lines
+
+```text
+causal structure      != semantic origin
+causal role           != privileged SELF
+future affordance     != valence
+behavior              != unique reward
+survival selection    != represented objective
+represented objective != phenomenology
+```
+
+PokeAQuale can study the machinery on the left. It currently has no executable bridge across the final `!=` signs.
