@@ -36,3 +36,5 @@ jobs:
         run: python experiments/gate10_causal_bottleneck_vs_self.py
       - name: Gate 11 — causal structure does not create valence
         run: python experiments/gate11_causal_structure_does_not_create_valence.py
+      - name: Gate 12 — reward non-identifiability
+        run: python experiments/gate12_reward_nonidentifiability.py
