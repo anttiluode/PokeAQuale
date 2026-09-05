@@ -1,197 +1,117 @@
 # Executed gates — what survived, what died
 
-The purpose of this ledger is to prevent the philosophical vocabulary from outrunning the executable result. Every gate is a finite / synthetic mechanism test. None is evidence of consciousness or subjective experience.
+Every gate is a finite / synthetic mechanism test. None is evidence of consciousness or subjective experience.
 
 | gate | attacker / question | result | status |
 |---|---|---|---|
-| G0 | Does raw-code relabeling destroy identity? | raw code `0%`; action-bound poke identity `100%` | Action-conditioned response geometry can be coordinate-invariant. |
-| G1 | Does action repertoire change operational state? | classes `1 → 2 → 4 → 8` | Operational quotient is embodiment-relative. |
-| G2 | Are passive / one-step / unordered summaries enough? | all `50%`; ordered two-step profile `100%` | Temporal counterfactual structure matters. |
-| G3 | Does efference create a SELF distinction? | bound lag `100%`; perfect external mimic still `50%` | Causal attribution only when causal stories differ. |
-| G4 | Can memory manufacture missing present evidence? | relation memory still needs `40` pokes; stable key lookup needs `8` | **No.** Memory needs a current handle. |
-| G5 | Can active discovery become zero-poke recognition? | compiled route `100%`; ordinary supervised learner identical | Useful distillation, no special machinery. |
-| G6 | Can relational structure settle an inverted spectrum? | `6` exact isomorphisms; external anchor reduces to `1` | **Stopping line.** No absolute semantic origin from preserved relations. |
-| G7 | Can passive geometry align embodiments? | honest geometry `100%`; exact false-friend geometry `0%` causal correspondence | Geometry can align or confidently mislead. |
-| G8 | Is homeostasis privileged over matched external information? | BODY and BEACON break symmetry equally | **No privilege from naming/location.** |
-| G9 | Which correlated variable changes future affordances? | passive `50%`; decoupling intervention `100%`; external causal clone restores location ambiguity | Standard causal identification. |
-| G10 | Does labelled SELF beat generic causal abstraction? | both `100%`; generic model pays `3` interventions and finds same bottleneck | **SELF adds no computational primitive here.** |
-| G11 | Does affordance preservation define good/bad? | same dynamics support opposite policies under different objectives | **No canonical valence from causal structure.** |
-| G12 | Can behavior reveal unique reward? | policy + preference evidence still leaves BASE and shaped BASE equivalent | **Reward is identified only up to an equivalence class.** |
-| G13 | Can selection look like within-agent preference? | equilibrium snapshot identical; survival-map reversal reveals immediate planner adaptation vs one-generation selection lag | **Yes.** Fitness filtering is not a represented objective. |
-| G14 | Can slow history reduce probe cost without making the prior dictate truth? | hybrid `100%` accurate at `1.3` probes pre-shift; stale prior stays correct at temporary `1.9` probes; fixed-prior accuracy falls to `10%` | **Positive.** Slow history can compile search order; fast evidence owns truth. |
-| G15 | Do FAST + MEDIUM + SLOW compose under a stale passive key? | `288` episodes: ALWAYS_ACTIVE `492` probes; FAST+MEDIUM `166`; FAST+MEDIUM+SLOW `138`, all robust routes `100%`; full system detects remap on first post-shift episode; cache without invalidation falls to `33.3%` post-shift | **Positive engineering composition.** Medium memory amortizes identification, slow history trims the residual cost, fast contradiction re-grounds stale keys. |
-| G16 | What if operator drift is completely silent under ordinary behavior? | NO_AUDIT: `0` detections and `280` stale episodes; AUDIT_EVERY_EPISODE: `319` audits and `0` stale; 16-step periodic schedules with equal `20`-audit budgets average `82.5` stale episodes (best `56`, worst `109`); SLOW_HAZARD also spends `20` audits and has `52` stale episodes, but after the true hazard doubles it skips one intermediate operator generation (`max jump = 2`) | **Hard evidence-cost boundary + partial scheduling win.** Silent drift is not detectable for free. Learned hazard improves audit economics while its timing statistics hold, but loses its guarantee after hazard shift and can miss a change event. |
+| G0–G13 | invariance, memory, SELF, value and selection attacks | see git history / earlier ledger | The philosophical vocabulary repeatedly shrank to ordinary operational, causal and learning mechanisms. |
+| G14 | Can slow history reduce probe cost without dictating truth? | hybrid `100%` accurate at `1.3` probes pre-shift; stale prior remains correct at temporary `1.9`; prior-only falls to `10%` | **Positive.** Slow history can optimize search order; fast evidence owns truth. |
+| G15 | Do FAST + MEDIUM + SLOW compose under stale passive keys? | `288` episodes: ALWAYS_ACTIVE `492` probes; FAST+MEDIUM `166`; FAST+MEDIUM+SLOW `138`, all robust routes `100%`; un-audited cache falls to `33.3%` post-shift | **Positive engineering composition.** Cache causal identities, order probes historically, re-ground on contradiction. |
+| G16 | What if drift is silent under ordinary behavior? | NO_AUDIT: `280` stale episodes; periodic-16 / 20-audit ensemble mean `82.5`; learned hazard / 20 audits `52`, but skips one intermediate operator generation after hazard doubles | **Hard evidence-cost boundary.** Silent drift requires purchased evidence; hazard scheduling helps but is not a guarantee. |
+| G17 | Can a hard maximum audit gap repair the learned hazard's missed-generation failure? | HAZARD_ONLY: `20` audits, `52` stale, max generation jump `2`; HAZARD+MAX_GAP16: `31` audits, `24` stale, all `11` generations detected separately, max jump `1`; periodic-10 phase ensemble near the same budget averages `31.9` audits and `49.5` stale, but a perfectly aligned periodic phase achieves `0` stale | **Positive with an explicit caveat.** A safety floor repairs the skipped-generation failure and improves the phase-averaged cost/staleness tradeoff, but a lucky periodic schedule can still beat it. The guarantee exists only because the constructed fastest change interval (`20`) exceeds the declared max audit gap (`16`). |
 
-## After sixteen attacks
+## After seventeen attacks
 
-The computational architecture has become clearer precisely because the philosophical shortcuts keep failing:
+The useful architecture is now straightforward:
 
 ```text
 SLOW
-history of causes / change statistics
-   -> choose probe order and audit timing
+historical cause / change statistics
+   -> order probes and target audits
 
 MEDIUM
-poke-confirmed context -> causal identity
-   -> cheap reusable prediction
+poke-confirmed causal cache
+   -> reuse expensive evidence
 
 FAST
-current evidence
-   -> active identification / re-grounding
+current paid evidence
+   -> identify / re-ground
+
+SAFETY FLOOR
+maximum evidence-free interval
+   -> bounds how long confidence can suppress checking
 ```
 
-The discipline is now stronger than after G15:
+The principle has sharpened again:
 
-> **Slow history may schedule evidence. Medium memory may reuse evidence. Neither may invent evidence.**
+> **Statistical expectations can optimize where evidence is purchased. A hard audit bound can limit blindness. Neither is a substitute for evidence, and the bound is only as good as the environmental assumption behind it.**
 
-G16 removes G15's convenient free cache audit. The ordinary control consequence is exactly the same string, `OK`, under every hidden operator generation. The only operation that contains information about the current generation is an explicit paid audit.
+G17 uses the same silent-drift world as G16. The hidden operator changes every 40 episodes initially, then every 20. Ordinary behavior remains exactly `OK`; only a paid audit reveals operator generation.
 
-That creates a hard stopping line:
+The pure learned-hazard scheduler reproduces G16:
 
 ```text
-normal consequence under operator A = OK
-normal consequence under operator B = OK
-
-no audit
-  -> no observation differs
-  -> no change detector has evidence
+HAZARD ONLY
+  paid audits            20
+  stale identity episodes 52
+  detected generations    10 / 11
+  maximum generation jump 2
+  maximum audit gap       30
 ```
 
-The deterministic receipt is:
+Adding a hard 16-episode maximum gap gives:
 
 ```text
-320 episodes
-11 hidden operator changes
-normal observation identical across all generations
-
-NO_AUDIT
-  paid audits: 0
-  detected changes: 0
-  stale hidden-identity episodes: 280
-
-AUDIT_EVERY_EPISODE
-  paid audits: 319
-  stale episodes: 0
-
-ORACLE_CHANGE_POINT
-  paid audits: 11
-  stale episodes: 0
-  (benchmark only: knows the hidden change times)
-
-PERIODIC_16
-  every phase offset evaluated
-  each schedule forced to the same 20-audit budget
-  mean stale episodes: 82.5
-  best offset: 56
-  worst offset: 109
-  every operator generation separately observed
-
-SLOW_HAZARD
-  paid audits: 20
-  stale episodes: 52
-  stale before hazard-rate change: 0
-  stale after hazard-rate change: 52
-  detected audit events: 10
-  one audit jumps generation 6 -> 8
+HAZARD + MAX_GAP16
+  paid audits             31
+  stale identity episodes 24
+  detected generations    11 / 11
+  maximum generation jump 1
+  maximum audit gap       16
 ```
 
-The slow scheduler starts with a previously learned 40-episode change interval. While that remains true, it places audits near the expected boundary and gets **zero stale dwell**. A fair 16-step periodic schedule with unknown phase averages `30` stale episodes over the same early regime.
+So the safety constraint costs `11` extra audits and removes `28` stale episodes while repairing the skipped-generation failure.
 
-Then the environment changes from a 40-episode to a 20-episode change interval. The slow scheduler has no magical way to know that. Its post-shift stale dwell becomes `52`, almost exactly the periodic ensemble's `52.5` average. Worse, one pair of operator changes occurs between audits, so the observer updates directly from generation 6 to generation 8 and never separately observes generation 7.
-
-That is an important negative result. Lower stale dwell is not the same thing as complete change-event capture.
-
-So G16 earns two statements at once:
-
-> **When drift is silent under normal behavior, cache invalidation has an irreducible evidence cost.**
-
-and
-
-> **A learned hazard can allocate a fixed audit budget better in a familiar regime, but it is a prior over change timing, not a guarantee.**
-
-This is ordinary inspection scheduling / change detection. That is the correct description.
-
-## What survived from the original PokeAQuale idea
+The fair periodic attacker matters. G17 sweeps every phase offset for fixed intervals `8..16`, not one convenient cadence. Interval `10` is nearest the hybrid's audit budget:
 
 ```text
-passive state can alias cause
-intervention can reveal cause
-stable causal identity can be cached
-cached identity can become stale
-contradiction can re-ground it when contradiction is observable
-silent drift requires paid audit
-slow history can reduce evidence cost but cannot abolish it
-exact operational equivalence remains a stopping line
+PERIODIC_10, all phase offsets
+  mean audits 31.9
+  mean stale  49.5
+  every phase captures every generation separately
 ```
 
-What still has not been earned:
+The hybrid therefore beats the **phase-averaged** periodic-10 schedule with slightly fewer audits (`31 < 31.9`) and roughly half the stale dwell (`24 < 49.5`). But one periodic-10 phase happens to land exactly on every hidden change and gets `0` stale episodes. That attacker stays in the result deliberately: this toy does not establish universal optimality.
+
+The earned result is only:
+
+> **A learned hazard and a hard evidence-frequency floor can complement each other: the prior improves where audits are spent, while the floor prevents long confidence-induced blind intervals.**
+
+The guarantee is conditional. Here `MAX_GAP=16` is shorter than the world's fastest hidden change interval `20`. That assumption is doing real work.
+
+## Gate 18 preregistration — attack the assumed safety bound
+
+The obvious loophole is now the bound itself.
+
+Inject an adversarial burst in which two or more silent operator changes occur inside one allowed 16-episode audit gap. Keep the ordinary observation identical. Compare:
 
 ```text
-operational identity -> quale
-causal bottleneck    -> SELF
-homeostasis          -> intrinsic valence
-survival             -> represented objective
-behavior             -> unique reward
-fitness / reward     -> felt experience
-```
-
-## Gate 17 preregistration — combine learned hazard with a hard audit safety bound
-
-G16 reveals a concrete engineering defect in the pure slow-hazard scheduler: it minimizes stale dwell well, but after the hazard changes it leaves a long enough audit gap to skip an entire intermediate operator generation.
-
-The next test should ask whether the natural composition is:
-
-```text
-SLOW statistical hazard
-  -> spend audits where changes are expected
-
-PLUS
-
-HARD maximum audit gap
-  -> never let historical confidence suppress evidence forever
-```
-
-Compare on the same silent-drift world:
-
-```text
-1. HAZARD ONLY
-   cheap, adaptive, can miss events
-
-2. PERIODIC ONLY
-   phase-blind safety cadence
-
-3. HAZARD + MAX-GAP SAFETY FLOOR
-   historical targeting, but no audit gap may exceed a fixed bound
-
+1. FIXED MAX-GAP16
+2. HAZARD + MAX-GAP16
+3. ESCALATING AUDITOR
+   if an audit reveals generation jump > 1,
+   temporarily shorten its maximum gap
 4. AUDIT EVERY EPISODE
-   expensive ceiling
-
 5. ORACLE
-   benchmark only
 ```
 
-Required measurements:
+Mandatory distinctions:
 
-- paid audits;
-- stale hidden-identity episodes;
-- number of operator generations separately observed;
-- maximum generation jump at detection;
-- maximum audit gap;
-- pre/post hazard-shift performance;
-- Pareto comparison against periodic schedules with similar audit budgets.
+- **current identity recovery**: after the next audit, can the observer become correct about the present operator?
+- **event reconstruction**: can it know how many unseen intermediate generations occurred?
 
-Kill conditions:
+Kill / stopping conditions:
 
-- if the hybrid still skips generations despite a gap shorter than the minimum change interval, the implementation is wrong;
-- if a periodic schedule at comparable audit cost matches both stale dwell and event capture, the learned hazard adds nothing;
-- if the safety floor consumes so many audits that historical scheduling no longer matters, the composition is ornamental;
-- there is still no free guarantee against changes faster than the enforced audit bound.
+- no method may reconstruct an unobserved intermediate operator trajectory when multiple trajectories produce the same two audited endpoints;
+- a fixed audit bound cannot guarantee complete event capture if the world may change faster than that bound;
+- an adaptive auditor may reduce *future* misses after discovering a jump, but it cannot retroactively recover information never observed;
+- if retrospective side information is added, count it as new evidence rather than memory magic.
 
 The narrow target is:
 
-> **Statistical expectations can optimize where evidence is purchased, while a hard evidence budget bound prevents confidence from becoming permanent blindness.**
+> **Evidence-frequency guarantees require a justified bound on hidden change rate. Violate that bound and an observer may recover the current state at its next audit while permanently losing the exact path taken between audits.**
 
-That is a useful bounded-observer design principle independent of the original qualia framing.
+That is likely the natural stopping point for this audit thread.
 
 ## Current stopping lines
 
@@ -202,6 +122,5 @@ future affordance     != valence
 behavior              != unique reward
 survival selection    != represented objective
 represented objective != phenomenology
+unobserved history    != reconstructable fact without additional evidence
 ```
-
-PokeAQuale can study the machinery on the left. It currently has no executable bridge across the final `!=` signs.

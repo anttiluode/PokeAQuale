@@ -46,3 +46,5 @@ jobs:
         run: python experiments/gate15_three_timescale_observer.py
       - name: Gate 16 — silent drift audit cost
         run: python experiments/gate16_silent_drift_audit_cost.py
+      - name: Gate 17 — hazard plus safety floor
+        run: python experiments/gate17_hazard_plus_safety_floor.py
