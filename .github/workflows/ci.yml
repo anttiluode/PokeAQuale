@@ -44,3 +44,5 @@ jobs:
         run: python experiments/gate14_slow_prior_fast_correction.py
       - name: Gate 15 — three-timescale observer
         run: python experiments/gate15_three_timescale_observer.py
+      - name: Gate 16 — silent drift audit cost
+        run: python experiments/gate16_silent_drift_audit_cost.py

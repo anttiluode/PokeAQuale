@@ -18,111 +18,113 @@ The purpose of this ledger is to prevent the philosophical vocabulary from outru
 | G11 | Does affordance preservation define good/bad? | same dynamics support opposite policies under different objectives | **No canonical valence from causal structure.** |
 | G12 | Can behavior reveal unique reward? | policy + preference evidence still leaves BASE and shaped BASE equivalent | **Reward is identified only up to an equivalence class.** |
 | G13 | Can selection look like within-agent preference? | equilibrium snapshot identical; survival-map reversal reveals immediate planner adaptation vs one-generation selection lag | **Yes.** Fitness filtering is not a represented objective. |
-| G14 | Can slow history reduce probe cost without making the prior dictate truth? | pre-shift: hybrid `100%` accuracy at `1.3` probes vs uniform active `1.667`; stale prior immediately after shift stays `100%` accurate but costs `1.9` probes while fixed-prior-only accuracy falls to `10%`; after slow update hybrid returns to `1.3`, matching oracle order | **Positive.** Slow history can compile search order; fast interventions preserve correctness under shift. |
-| G15 | Do FAST + MEDIUM + SLOW actually compose under a stale passive key? | over `288` episodes: ALWAYS_ACTIVE `492` probes; FAST+MEDIUM `166`; FAST+MEDIUM+SLOW `138`, all robust routes `100%` accurate; full system detects remap on first post-shift episode and invalidates `2` hot stale cache entries; CACHE_NO_INVALIDATION falls to `33.3%` accuracy in the first and last post-shift cycles; PRIOR_ONLY falls from `87.5%` pre-shift to `4.17%` post-shift | **Positive engineering composition.** Medium audited caching amortizes repeated identification; slow history cuts the remaining probe bill by `28` probes (`16.9%`) at equal perfect accuracy; fast contradiction-triggered probing prevents stale cache hits from becoming final errors. |
+| G14 | Can slow history reduce probe cost without making the prior dictate truth? | hybrid `100%` accurate at `1.3` probes pre-shift; stale prior stays correct at temporary `1.9` probes; fixed-prior accuracy falls to `10%` | **Positive.** Slow history can compile search order; fast evidence owns truth. |
+| G15 | Do FAST + MEDIUM + SLOW compose under a stale passive key? | `288` episodes: ALWAYS_ACTIVE `492` probes; FAST+MEDIUM `166`; FAST+MEDIUM+SLOW `138`, all robust routes `100%`; full system detects remap on first post-shift episode; cache without invalidation falls to `33.3%` post-shift | **Positive engineering composition.** Medium memory amortizes identification, slow history trims the residual cost, fast contradiction re-grounds stale keys. |
+| G16 | What if operator drift is completely silent under ordinary behavior? | NO_AUDIT: `0` detections and `280` stale episodes; AUDIT_EVERY_EPISODE: `319` audits and `0` stale; 16-step periodic schedules with equal `20`-audit budgets average `82.5` stale episodes (best `56`, worst `109`); SLOW_HAZARD also spends `20` audits and has `52` stale episodes, but after the true hazard doubles it skips one intermediate operator generation (`max jump = 2`) | **Hard evidence-cost boundary + partial scheduling win.** Silent drift is not detectable for free. Learned hazard improves audit economics while its timing statistics hold, but loses its guarantee after hazard shift and can miss a change event. |
 
-## After fifteen attacks
+## After sixteen attacks
 
-The project has converged on a bounded causal observer:
+The computational architecture has become clearer precisely because the philosophical shortcuts keep failing:
 
 ```text
 SLOW
-historical frequencies / hazard estimates
-   -> choose which expensive question is worth asking first
+history of causes / change statistics
+   -> choose probe order and audit timing
 
 MEDIUM
 poke-confirmed context -> causal identity
    -> cheap reusable prediction
 
 FAST
-current consequence / contradiction
-   -> active re-grounding when the cheap route fails
+current evidence
+   -> active identification / re-grounding
 ```
 
-The crucial discipline is now:
+The discipline is now stronger than after G15:
 
-> **Slow history may choose search economics. Medium memory may cache an answer. Current evidence still owns truth.**
+> **Slow history may schedule evidence. Medium memory may reuse evidence. Neither may invent evidence.**
 
-G15 makes the three layers coexist in one deterministic toy instead of testing them pairwise.
+G16 removes G15's convenient free cache audit. The ordinary control consequence is exactly the same string, `OK`, under every hidden operator generation. The only operation that contains information about the current generation is an explicit paid audit.
 
-The world has ten persistent context keys and a four-slot LRU cache. Two contexts are hot and recur constantly; the others create cold misses. During a long stable epoch, context predicts the causal driver. Then the operator remaps while the passive context names stay exactly the same.
-
-The full observer behaves like this:
+That creates a hard stopping line:
 
 ```text
-cache hit
-  -> try cached causal identity
-  -> ordinary task consequence agrees
-       -> zero extra diagnostic probes
+normal consequence under operator A = OK
+normal consequence under operator B = OK
 
-cache hit
-  -> ordinary consequence contradicts expectation
-       -> invalidate stale entry
-       -> FAST probes remaining hypotheses
-       -> rewrite MEDIUM cache
-
-cache miss
-  -> SLOW orders candidate probes
-  -> FAST identifies current cause
-  -> MEDIUM stores it
+no audit
+  -> no observation differs
+  -> no change detector has evidence
 ```
 
-That yields the deterministic receipt:
+The deterministic receipt is:
 
 ```text
-288 total episodes
+320 episodes
+11 hidden operator changes
+normal observation identical across all generations
 
-ALWAYS_ACTIVE
-  accuracy: 100%
-  paid diagnostic probes: 492
+NO_AUDIT
+  paid audits: 0
+  detected changes: 0
+  stale hidden-identity episodes: 280
 
-FAST + MEDIUM
-  accuracy: 100%
-  paid diagnostic probes: 166
+AUDIT_EVERY_EPISODE
+  paid audits: 319
+  stale episodes: 0
 
-FAST + MEDIUM + SLOW
-  accuracy: 100%
-  paid diagnostic probes: 138
-  saving vs FAST+MEDIUM: 28 probes = 16.9%
-  first drift invalidation: first post-shift episode
-  stale hot entries repaired: 2
+ORACLE_CHANGE_POINT
+  paid audits: 11
+  stale episodes: 0
+  (benchmark only: knows the hidden change times)
 
-CACHE_NO_INVALIDATION
-  post-shift first-cycle accuracy: 33.3%
-  post-shift last-cycle accuracy: 33.3%
-  wrong final answers in each 24-episode post cycle: 16
+PERIODIC_16
+  every phase offset evaluated
+  each schedule forced to the same 20-audit budget
+  mean stale episodes: 82.5
+  best offset: 56
+  worst offset: 109
+  every operator generation separately observed
 
-PRIOR_ONLY
-  pre-shift accuracy: 87.5%
-  post-shift accuracy: 4.17%
+SLOW_HAZARD
+  paid audits: 20
+  stale episodes: 52
+  stale before hazard-rate change: 0
+  stale after hazard-rate change: 52
+  detected audit events: 10
+  one audit jumps generation 6 -> 8
 ```
 
-In the final post-shift steady cycle, the probe bill is:
+The slow scheduler starts with a previously learned 40-episode change interval. While that remains true, it places audits near the expected boundary and gets **zero stale dwell**. A fair 16-step periodic schedule with unknown phase averages `30` stale episodes over the same early regime.
 
-```text
-ALWAYS_ACTIVE          42 / 24 episodes
-FAST + MEDIUM          12 / 24
-FAST + MEDIUM + SLOW   11 / 24
-```
+Then the environment changes from a 40-episode to a 20-episode change interval. The slow scheduler has no magical way to know that. Its post-shift stale dwell becomes `52`, almost exactly the periodic ensemble's `52.5` average. Worse, one pair of operator changes occurs between audits, so the observer updates directly from generation 6 to generation 8 and never separately observes generation 7.
 
-So MEDIUM supplies the large amortization win and SLOW supplies a smaller but real optimization at equal perfect final causal accuracy.
+That is an important negative result. Lower stale dwell is not the same thing as complete change-event capture.
 
-The full mechanism is ordinary adaptive diagnosis, audited caching and sequential search. That is the correct description.
+So G16 earns two statements at once:
+
+> **When drift is silent under normal behavior, cache invalidation has an irreducible evidence cost.**
+
+and
+
+> **A learned hazard can allocate a fixed audit budget better in a familiar regime, but it is a prior over change timing, not a guarantee.**
+
+This is ordinary inspection scheduling / change detection. That is the correct description.
 
 ## What survived from the original PokeAQuale idea
 
 ```text
-1. passive representations can alias or mislead;
-2. intervention can expose hidden causal distinctions;
-3. action-conditioned futures give an operational identity;
-4. stable identities can be compiled into cheaper predictors;
-5. compiled predictors require evidence-based invalidation under drift;
-6. slow statistics can optimize probe order without becoming truth;
-7. fast intervention can re-ground a stale representation;
-8. exact operational equivalence remains a stopping line.
+passive state can alias cause
+intervention can reveal cause
+stable causal identity can be cached
+cached identity can become stale
+contradiction can re-ground it when contradiction is observable
+silent drift requires paid audit
+slow history can reduce evidence cost but cannot abolish it
+exact operational equivalence remains a stopping line
 ```
 
-What did **not** survive as earned claims:
+What still has not been earned:
 
 ```text
 operational identity -> quale
@@ -133,73 +135,63 @@ behavior             -> unique reward
 fitness / reward     -> felt experience
 ```
 
-The repo is now substantially more useful as architecture and substantially weaker as a consciousness theory. That is the direction the tests forced.
+## Gate 17 preregistration — combine learned hazard with a hard audit safety bound
 
-## Gate 16 preregistration — remove the free audit signal
+G16 reveals a concrete engineering defect in the pure slow-hazard scheduler: it minimizes stale dwell well, but after the hazard changes it leaves a long enough audit gap to skip an entire intermediate operator generation.
 
-G15 contains an important convenience that must be attacked immediately: the ordinary task consequence tells the observer when its cached causal prediction is wrong.
-
-That means stale cache entries are **audited for free by normal behavior**.
-
-Real systems are not always that kind. An operator can drift while the currently chosen action continues to produce the same immediate observation. The hidden causal identity may have changed even though the cheap control loop looks normal.
-
-Gate 16 should therefore construct **silent drift**:
+The next test should ask whether the natural composition is:
 
 ```text
-before shift:
-  cached identity A
-  ordinary action -> immediate consequence OK
+SLOW statistical hazard
+  -> spend audits where changes are expected
 
-after shift:
-  hidden causal identity B
-  same ordinary action -> same immediate consequence OK
+PLUS
 
-only an explicit audit / alternative intervention
-reveals A != B
+HARD maximum audit gap
+  -> never let historical confidence suppress evidence forever
 ```
 
-Attackers:
+Compare on the same silent-drift world:
 
 ```text
-NO AUDIT
-  trust the cache while ordinary behavior looks normal
+1. HAZARD ONLY
+   cheap, adaptive, can miss events
 
-AUDIT EVERY EPISODE
-  guaranteed rapid detection, maximal diagnostic cost
+2. PERIODIC ONLY
+   phase-blind safety cadence
 
-PERIODIC AUDIT
-  fixed audit interval
+3. HAZARD + MAX-GAP SAFETY FLOOR
+   historical targeting, but no audit gap may exceed a fixed bound
 
-SLOW-HAZARD AUDIT + FAST RE-GROUNDING
-  historical change rate determines audit frequency;
-  a positive audit triggers full active identification
+4. AUDIT EVERY EPISODE
+   expensive ceiling
 
-ORACLE CHANGE POINT
-  benchmark only
+5. ORACLE
+   benchmark only
 ```
 
 Required measurements:
 
-- paid audits / probes;
-- stale-cache dwell time after silent remap;
-- number of episodes carrying the wrong hidden causal identity before detection;
-- first-detection latency;
-- cumulative diagnostic cost;
-- cost-vs-staleness frontier;
-- performance when the true drift hazard changes.
+- paid audits;
+- stale hidden-identity episodes;
+- number of operator generations separately observed;
+- maximum generation jump at detection;
+- maximum audit gap;
+- pre/post hazard-shift performance;
+- Pareto comparison against periodic schedules with similar audit budgets.
 
-Kill / stopping conditions:
+Kill conditions:
 
-- if `NO AUDIT` detects a truly silent remap, the setup leaked change information;
-- no non-oracle method may claim guaranteed immediate detection without paying for evidence;
-- if slow hazard estimates do not beat a fair periodic schedule on the cost/staleness tradeoff, the slow audit scheduler is ornamental;
-- if two operators are identical under every available normal consequence and every available audit, they are operationally equivalent and the test must stop there.
+- if the hybrid still skips generations despite a gap shorter than the minimum change interval, the implementation is wrong;
+- if a periodic schedule at comparable audit cost matches both stale dwell and event capture, the learned hazard adds nothing;
+- if the safety floor consumes so many audits that historical scheduling no longer matters, the composition is ornamental;
+- there is still no free guarantee against changes faster than the enforced audit bound.
 
 The narrow target is:
 
-> **Cache invalidation has an irreducible evidence cost when drift is silent under normal behavior; learned change statistics may reduce that cost by scheduling audits, but cannot eliminate the identifiability boundary.**
+> **Statistical expectations can optimize where evidence is purchased, while a hard evidence budget bound prevents confidence from becoming permanent blindness.**
 
-This would close a loophole in G15 rather than merely adding another feature.
+That is a useful bounded-observer design principle independent of the original qualia framing.
 
 ## Current stopping lines
 
