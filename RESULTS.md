@@ -15,8 +15,9 @@ Every gate below is a finite / synthetic mechanism test. None is evidence that t
 | G6 | Can complete action-conditioned structure settle a globally inverted / permuted quality labelling? | six-state ring has **6** zero-error action-preserving cross-agent isomorphisms; actual hidden shift is only one of them; one extra external anchor collapses ambiguity to `1` map | **Stopping line.** Relational intervention geometry fixes structure, not an absolute semantic origin when nontrivial automorphisms remain. |
 | G7 | Can two differently encoded agents align qualities across embodiments? What if passive geometry is a false friend? | honest passive metric + affine alignment: `100%` with zero residual; deliberately reattached but still perfectly isometric passive geometry: `0%` semantic correspondence with zero residual; transition-only leaves `6` exact maps; shared three-action consequence profile recovers `100%` true correspondence | Interventions are **not always needed**. Passive relational geometry wins when it is causally attached correctly. But beautiful passive structure can be exactly wrong about causal identity; shared consequences can supply the missing anchor. |
 | G8 | Is an endogenous homeostatic / body consequence intrinsically a stronger semantic anchor than an equally informative external marker? | transition-only leaves `6` maps; repeated-valued body effect + transitions leaves exactly `1` true map; a matched external beacon with the same pattern also leaves exactly `1` true map | **Negative on privilege.** Homeostatic consequence can break an operational symmetry, but symmetry-breaking alone is ordinary information. A matched external asymmetry does identical alignment work. Any stronger claim must use the body's effect on future control / viability, not merely its label value. |
+| G9 | If BODY and BEACON are perfectly correlated, can the agent identify which one actually changes its future ability to act and sense? | passive/current/history attackers remain `50%`; decoupling interventions identify the causal driver at `100%`; toggling BODY changes future action count, sensor count and reachable states while toggling BEACON does not; an external causal clone with the same intervention→affordance profile restores `50%` internal/external identifiability | **Positive but ordinary.** Intervention can identify a variable that recursively changes future affordances. This is standard causal/system identification, not phenomenology. `inside` is still not an operational primitive when an external causal clone is exact. |
 
-## The hypothesis after eight attacks
+## The hypothesis after nine attacks
 
 The original tempting story was:
 
@@ -33,114 +34,112 @@ The gates force a narrower story:
 ```text
 ACTIVE ROUTE
 current ambiguity
- -> owned intervention
+ -> intervention
  -> ordered consequence
  -> operational / predictive identity
 
 LEARNING ROUTE
-many poke-confirmed identities
- -> ordinary learning can predict them from cheaper passive cues
- -> zero-poke recognition in a stable representation generation
+many intervention-confirmed identities
+ -> ordinary learning predicts them from cheaper passive cues
+ -> zero-poke recognition while representation stays stable
 
-FAILURE / AUDIT ROUTE
+AUDIT ROUTE
 passive shortcut loses its key or representation changes
  -> shortcut can become confidently wrong
- -> active route can re-ground / re-label the new generation
+ -> intervention can re-ground the new generation
 
 CROSS-EMBODIMENT ROUTE
 passive relational geometry may align agents for free
  OR
 may be an exact isomorphic false friend
- -> shared causal consequences can anchor correspondence
+ -> causal consequences can anchor correspondence
 
-ENDOGENOUS ANCHOR ROUTE
-body-affecting consequence can break a symmetry
- BUT
-matched external information can break the same symmetry
- -> endogenous location alone has not earned special status
+SELF-AFFECTING ROUTE
+correlated BODY and BEACON are observationally tied
+ -> decoupling intervention
+ -> identify which variable changes future action/sensing/reachability
 
-SYMMETRY LIMIT
-if every available action-conditioned relation is preserved
- -> no operational test can recover an extra hidden semantic fact
+SYMMETRY / CLONE LIMIT
+if every available intervention-conditioned relation is preserved
+ -> no operational test can recover an extra hidden semantic or location fact
 ```
 
 So the strongest computational claim presently earned is:
 
-> **An intervention-defined predictive profile can serve as a comparatively invariant operational identity and causal anchor when passive representation is ambiguous or misleading. Immediate perception can be a cheaper learned predictor of that identity. Endogenous bodily consequence can supply an anchor, but its mere informational asymmetry is not privileged over an external cue. Neither route supplies an absolute semantic origin when the full operational structure remains symmetric.**
+> **A bounded agent can use intervention-conditioned futures to identify comparatively invariant operational objects and to distinguish a variable that changes its own future action/sensing repertoire from a merely correlated marker. Immediate recognition can be an ordinary learned shortcut. None of this supplies an absolute semantic origin, an intrinsically privileged `inside`, or phenomenology.**
 
 That is useful even if the word `quale` is eventually removed from the project.
 
-## Gate 8's surviving question: consequence that changes the observer
+## Gate 9 result — a real distinction, but a familiar one
 
-G8 kills the cheap move:
+G9 finally makes the BODY/BEACON distinction causal rather than verbal.
 
-```text
-"it affects homeostasis"
- -> therefore the signal is intrinsically for-me
- -> therefore qualia
-```
-
-The body channel won only because it carried symmetry-breaking information. The external beacon carried the same information and won identically.
-
-The next claim worth testing is different. A bodily consequence can alter the **future counterfactual repertoire of the observer itself**:
+During ordinary data:
 
 ```text
-state / event
- -> body change
- -> future action capacity changes
- -> future sensing opportunities change
- -> future control and viability change
+BODY == BEACON
 ```
 
-That suggests a richer operational object than a response label:
+Two hypotheses therefore make exactly the same predictions:
 
 ```text
-Q_emb(x,b)
-  = distribution over future observations,
-    body states,
-    available actions,
-    costs and consequences
-    under candidate interventions
+H_body:   BODY   -> future affordance set
+H_beacon: BEACON -> future affordance set
 ```
 
-This is still computational. It is not a theory of feeling. But it gives a precise meaning to one part of `for this system`: some variables recursively change the system's own ability to continue probing and controlling the world.
+No current-value or history-only method can tell them apart without new evidence. The gate then performs a decoupling intervention. Changing BODY while holding BEACON fixed changes the next available actions, sensors and reachable-state count. Changing BEACON while holding BODY fixed changes none of them.
 
-## Gate 9 preregistration — body versus matched beacon after causal decoupling
+This earns only:
 
-Construct two channels that are perfectly correlated during ordinary observation and calibration:
+> **The agent can identify which currently correlated variable causally controls part of its future counterfactual repertoire.**
+
+That is system identification. It becomes potentially relevant to an operational notion of `self` because the identified variable changes which future experiments the observer can perform, but the mathematics does not require the word self.
+
+The external causal-clone attacker is equally important. If a variable outside the nominal body is wired to control exactly the same future affordance profile, and every available intervention sees the same consequences, G9 returns to chance on the question `internal or external?`.
+
+So the surviving distinction is **causal role**, not anatomical location.
+
+## Gate 10 preregistration — does a SELF factor buy anything beyond generic causal factorization?
+
+The next temptation is to promote the causal driver into a privileged `SELF` variable. That should be attacked immediately.
+
+Construct many external contexts whose superficial correlations differ, while the driver→affordance law is shared. Compare:
 
 ```text
-BODY   -> changes an internal capacity variable
-BEACON -> emits the same currently observable value
+1. flat context-specific lookup
+2. passive correlation shortcut
+3. hand-labelled SELF-factor model
+4. generic causal-bottleneck model with no SELF vocabulary
+5. oracle causal graph
 ```
 
-Then intervene to decouple them.
+Train / calibrate on some contexts and hold out new combinations.
 
-Mandatory tests:
+The hand-labelled SELF model may compress and transfer because it isolates a reusable driver of future affordances. But if a generic causal-bottleneck model discovers the same sufficient variable at equal information / parameter cost, then `SELF` has again contributed vocabulary rather than computation.
+
+Mandatory metrics:
 
 ```text
-1. passive-only predictor before decoupling
-2. current-value / lookup attacker
-3. history-only attacker
-4. BODY intervention
-5. BEACON intervention
-6. future-action-set prediction
-7. future-observability / reachable-state prediction
-8. oracle causal graph
+held-out affordance prediction
+held-out intervention prediction
+parameter / table-entry count
+number of calibration interventions
+failure after correlation reversal
+transfer to a new external context
 ```
-
-The intended distinction is not that BODY is internal by name. It is that changing BODY should change later affordances while changing BEACON should not.
 
 Kill conditions:
 
-- if a passive or current-value attacker predicts the causal distinction without observing any decoupling evidence, the setup leaked the answer;
-- if BEACON intervention changes future affordances exactly as BODY does, the test has not separated self-affecting from merely informative variables;
-- if an ordinary causal-discovery / system-identification description fully explains the result, the repo must say so rather than promote it to phenomenology;
-- if an external causal clone is wired to control the same future action repertoire, internal/external location alone must again be treated as operationally unidentifiable.
+- if flat lookup matches at equal sample / parameter cost, there is no useful factorization result;
+- if passive correlation survives correlation reversal, the setup leaked the driver identity;
+- if the generic bottleneck matches the hand-labelled SELF model, the computational result must be described as causal abstraction / sufficient-state discovery, not selfhood;
+- if a causal clone yields the same bottleneck, anatomical inside/outside remains non-identifiable.
 
-The narrow result worth earning is only:
+The narrow positive result worth earning would be:
 
-> **A bounded agent can identify variables that causally alter its own future action/sensing repertoire, rather than merely correlate with those variables.**
+> **A variable that controls future affordances can form a reusable causal sufficient statistic across changing world contexts.**
+
+That would be interesting architecture. It would still not be a qualia result.
 
 ## Current philosophical boundary
 
@@ -156,6 +155,10 @@ G7 adds:
 
 G8 adds:
 
-> Calling a symmetry-breaking consequence `homeostatic`, `pain`, `reward`, or `body` does not make the information mathematically privileged. A stronger self-related claim has to depend on how the consequence changes the observer's own future causal possibilities.
+> Calling a symmetry-breaking consequence `homeostatic`, `pain`, `reward`, or `body` does not make the information mathematically privileged.
+
+G9 adds:
+
+> A variable can be special because of what it causally controls in the observer's future, but `special causal role` is not the same claim as `self`, `inside`, `for-me-ness`, or `experience`.
 
 These are not temporary missing features. They are part of the current theory's definition.
