@@ -30,3 +30,5 @@ jobs:
         run: python experiments/gate7_cross_embodiment_alignment.py
       - name: Gate 8 — homeostatic anchor
         run: python experiments/gate8_homeostatic_anchor.py
+      - name: Gate 9 — future-affordance causality
+        run: python experiments/gate9_future_affordance_causality.py
