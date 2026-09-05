@@ -12,6 +12,56 @@ It is **not** evidence of consciousness, a solution to the hard problem, or an e
 
 See [`RESULTS.md`](RESULTS.md) for the gate ledger and exact stopping lines.
 
+## Reusable tool
+
+The gate sequence has now been distilled into [`bounded_observer.py`](bounded_observer.py), a zero-dependency module that can be reused outside the philosophical toy worlds.
+
+It exports four small pieces:
+
+- `BoundedCausalObserver` — active identification + audited LRU cache + slow probe ordering;
+- `Resolution` — reports identity, verification state, diagnostic-probe cost and cache-audit cost;
+- `SlowProbePrior` — decayed empirical history used to order questions, never to decide truth;
+- `HazardAuditScheduler` — learned audit timing with an optional hard maximum gap.
+
+The evidence boundary is explicit. A cache hit with no validator is returned as `verified=False`; the library will not silently call remembered state current truth.
+
+Minimal pattern:
+
+```python
+from bounded_observer import BoundedCausalObserver
+
+world = {"driver": "V1"}
+observer = BoundedCausalObserver(("V0", "V1", "V2"), cache_capacity=8)
+
+
+def probe(candidate):
+    # Replace with the expensive causal test in your real system.
+    return candidate == world["driver"]
+
+
+def validate_cached(candidate):
+    # Replace with a cheap/current audit when one exists.
+    return candidate == world["driver"]
+
+
+first = observer.resolve("context-A", probe)
+again = observer.resolve("context-A", probe, validate_cached=validate_cached)
+
+world["driver"] = "V2"  # operator drift
+repaired = observer.resolve("context-A", probe, validate_cached=validate_cached)
+
+print(repaired)
+```
+
+Run the complete example and unit tests with:
+
+```bash
+python -m examples.bounded_observer_demo
+python -m unittest discover -s tests -v
+```
+
+The module is intentionally generic: a `context` can be a machine configuration, patient-safe simulator state, sensor regime, software service signature, experiment condition, or anything hashable; an `identity` can be any finite hypothesis set. Whether a given intervention is safe, legal or meaningful remains the caller's responsibility.
+
 ## What survived
 
 The compact architecture is:
@@ -113,7 +163,7 @@ python experiments/gate17_hazard_plus_safety_floor.py
 python experiments/gate18_unknown_change_bound.py
 ```
 
-GitHub Actions runs the complete G0–G18 sequence on Python 3.12.
+GitHub Actions runs the reusable-tool tests plus the complete G0–G18 sequence on Python 3.12.
 
 ## Lineage
 
@@ -130,9 +180,9 @@ See [`PRIOR_ART.md`](PRIOR_ART.md) for the repo's prior-art fence.
 
 ## Where to go next
 
-There is deliberately no preregistered **Gate 19** merely to continue the sequence. A next branch should earn its existence by adding either a genuinely new mechanism or a real application.
+There is deliberately no preregistered **Gate 19** merely to continue the sequence. A next research branch should earn its existence by adding either a genuinely new mechanism or a real application.
 
-The obvious engineering descendants are:
+The current code already supports engineering experiments in:
 
 ```text
 active fault diagnosis
