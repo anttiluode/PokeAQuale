@@ -38,3 +38,5 @@ jobs:
         run: python experiments/gate11_causal_structure_does_not_create_valence.py
       - name: Gate 12 — reward non-identifiability
         run: python experiments/gate12_reward_nonidentifiability.py
+      - name: Gate 13 — selection masquerades as preference
+        run: python experiments/gate13_selection_masquerades_as_preference.py
