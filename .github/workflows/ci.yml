@@ -22,3 +22,5 @@ jobs:
         run: python experiments/gate3_owned_vs_external_poke.py
       - name: Gate 4 — memory does not create observation
         run: python experiments/gate4_memory_does_not_create_observation.py
+      - name: Gate 5 — active to immediate distillation
+        run: python experiments/gate5_active_to_immediate_distillation.py
