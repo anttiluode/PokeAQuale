@@ -34,3 +34,5 @@ jobs:
         run: python experiments/gate9_future_affordance_causality.py
       - name: Gate 10 — causal bottleneck versus SELF
         run: python experiments/gate10_causal_bottleneck_vs_self.py
+      - name: Gate 11 — causal structure does not create valence
+        run: python experiments/gate11_causal_structure_does_not_create_valence.py
