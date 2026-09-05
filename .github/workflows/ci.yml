@@ -20,3 +20,5 @@ jobs:
         run: python experiments/gate2_multistep_counterfactuals.py
       - name: Gate 3 — owned versus external poke
         run: python experiments/gate3_owned_vs_external_poke.py
+      - name: Gate 4 — memory does not create observation
+        run: python experiments/gate4_memory_does_not_create_observation.py
