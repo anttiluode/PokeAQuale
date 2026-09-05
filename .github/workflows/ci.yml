@@ -42,3 +42,5 @@ jobs:
         run: python experiments/gate13_selection_masquerades_as_preference.py
       - name: Gate 14 — slow prior fast correction
         run: python experiments/gate14_slow_prior_fast_correction.py
+      - name: Gate 15 — three-timescale observer
+        run: python experiments/gate15_three_timescale_observer.py
