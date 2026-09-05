@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  gate0:
+  gates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,3 +14,5 @@ jobs:
           python-version: '3.12'
       - name: Gate 0 — poke invariance
         run: python experiments/gate0_poke_invariance.py
+      - name: Gate 1 — embodiment refines quotient
+        run: python experiments/gate1_embodiment_refines_quotient.py
