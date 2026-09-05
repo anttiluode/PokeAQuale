@@ -2,13 +2,45 @@
 
 **Billiards of the soul.**
 
-This repo takes one narrow idea seriously enough to attack it:
+This repo started from a speculative question about whether an agent-relative geometry of action-conditioned consequences might be a useful computational analogue for qualitative identity.
 
-> **The poke itself is probably not a quale. A better computational candidate is the agent-relative geometry of what could happen under the agent's own interventions, together with the binding that says _I issued this action and this consequence followed_.**
+After **19 executable gates (G0–G18)**, the result is narrower and more useful:
 
-This is **not a claim that the code is conscious**, not a solution to the hard problem, and not a claim that sensorimotor theories of qualia are new. The broad philosophical territory is old and directly occupied. The purpose here is to turn one version of it into an executable object with invariance tests and kill conditions.
+> **PokeAQuale is now an executable study of a bounded causal observer: how an agent can buy interventions when passive evidence is insufficient, cache causally confirmed identities, use slow history to make future inquiry cheaper, and re-ground itself when the world changes.**
 
-## The candidate
+It is **not** evidence of consciousness, a solution to the hard problem, or an executable bridge to subjective experience.
+
+See [`RESULTS.md`](RESULTS.md) for the gate ledger and exact stopping lines.
+
+## What survived
+
+The compact architecture is:
+
+```text
+SLOW
+historical cause / change statistics
+   -> order probes and target audits
+
+MEDIUM
+poke-confirmed causal cache
+   -> reuse expensive evidence
+
+FAST
+current intervention evidence
+   -> identify / re-ground
+
+SAFETY POLICY
+maximum evidence-free interval / audit budget
+   -> trade evidence cost against stale-state risk
+```
+
+The governing rule after G18 is:
+
+> **Use history to decide where evidence is worth buying, use memory to amortize evidence already bought, and use current intervention to re-ground when necessary. Never promote a prior, cache, or safety assumption into evidence it did not observe.**
+
+That places the repo squarely near active sensing, system identification, sequential testing, predictive-state representations, bisimulation, adaptive monitoring and cache invalidation.
+
+## The original operational object
 
 Passive perception gives an observation
 
@@ -16,27 +48,13 @@ Passive perception gives an observation
 o_t = H(x_t)
 ```
 
-A poke gives an action-conditioned consequence
+while an intervention gives an action-conditioned consequence
 
 ```text
-a_t -> x_{t+1} -> o_{t+1}
+a_t -> x_{t+1} -> o_{t+1}.
 ```
 
-If the system also retains the efference relation
-
-```text
-I issued a_t -> this consequence followed
-```
-
-then its state can be characterized not only by what it currently sees, but by the family of futures available under its own interventions.
-
-Define the **poke profile** of state `x` as
-
-```text
-Q(x) = { P(o_{t+tau} | do(a), x) : a in A, tau in T }
-```
-
-Two hidden states are operationally equivalent for this agent when every available intervention predicts the same future observations:
+Two states are operationally equivalent for a particular observer when every available intervention predicts the same relevant future observations:
 
 ```text
 x ~ x'
@@ -45,220 +63,87 @@ P(o_{t+tau} | do(a), x) = P(o_{t+tau} | do(a), x')
 for all available a, tau.
 ```
 
-The agent therefore does not need to identify raw physical state `x`. It can inhabit the quotient
+That makes the observer inhabit an action-repertoire-relative quotient `X / ~` rather than requiring access to raw physical state.
+
+The early repo treated this as a **computational qualia candidate** worth attacking. The gates did attack it. What survived is the operational / causal machinery; the stronger qualia interpretation did not earn an executable bridge.
+
+## What the gates established
+
+The full ledger is in [`RESULTS.md`](RESULTS.md). The later sequence is the clearest summary:
+
+- **G14:** slow empirical priors reduce paid probe cost while fast interventions preserve correctness after distribution shift.
+- **G15:** FAST + MEDIUM + SLOW compose: causal caching supplies the large amortization win; historical probe ordering trims the remaining cost; contradiction re-grounds stale keys.
+- **G16:** when operator drift is silent under ordinary behavior, cache invalidation has an irreducible evidence cost.
+- **G17:** a learned change hazard plus a hard maximum audit gap can improve the phase-averaged cost/staleness tradeoff, but the guarantee depends on the assumed change-rate bound.
+- **G18:** violate that bound and two physically different hidden histories can produce exactly the same complete evidence transcript. The observer can recover the **current** operator at its next audit while the exact unobserved path remains non-identifiable.
+
+The final G18 distinction is important:
 
 ```text
-X / ~
+CURRENT IDENTITY
+  can be repaired by new evidence
+
+UNOBSERVED PATH
+  cannot be reconstructed when multiple paths
+  produce the same available evidence
 ```
 
-where states are grouped by the distinctions this particular sensing-and-action repertoire can actually make.
-
-That quotient is the first **computational qualia candidate** in this repo.
-
-The deliberately cautious claim is:
-
-> If qualitative identity has a computational structure at all, an agent-relative action-conditioned predictive equivalence class is a better candidate than a raw feature code, neuron ID, frequency label, or frozen latent vector.
-
-## Why the poke matters
-
-Two states can be passively identical:
+## Stopping lines earned by the attacks
 
 ```text
-H(x1) = H(x2)
+causal structure      != semantic origin
+causal role           != privileged SELF
+future affordance     != intrinsic valence
+behavior              != unique reward
+survival selection    != represented objective
+represented objective != phenomenology
+unobserved history    != reconstructable fact without added evidence
 ```
 
-and still differ under action:
+These are not TODO items disguised as results. They are part of the current theory boundary.
 
-```text
-H(F(x1, a)) != H(F(x2, a)).
-```
+## Run the experiments
 
-The action has exposed a distinction absent from the passive stream. This is the precise sense in which an actuator can become a sense organ.
-
-The deeper point is not merely information gain. The action creates an **egocentric causal relation**:
-
-```text
-my command
-   |
-   v
-expected consequence
-   |
-   v
-actual consequence
-   |
-   v
-structured difference
-```
-
-That is a plausible computational ingredient of **for-me-ness**: not a metaphysical Self, but an internally privileged causal origin around which perceptual distinctions can be organized.
-
-## Poke Invariance Test
-
-A serious candidate should survive arbitrary implementation relabeling.
-
-We therefore ask two opposite questions.
-
-### A. Different code, same counterfactual world
-
-Give two embodiments different raw internal codes while preserving the same action-response structure.
-
-Prediction:
-
-```text
-raw-code identity fails
-poke geometry survives
-```
-
-If the candidate depends on the neuron number / latent coordinate / arbitrary symbol, kill it.
-
-### B. Same passive appearance, different counterfactual world
-
-Give two hidden states the same passive observation but different consequences under one or more interventions.
-
-Prediction:
-
-```text
-passive identity fails
-poke geometry separates them
-```
-
-If passive appearance alone captures everything the poke representation learns, kill the extra machinery.
-
-## Gate 0 — executable sanity check
-
-`experiments/gate0_poke_invariance.py` is intentionally tiny and deterministic. It checks four things:
-
-1. **raw-code relabeling** can destroy coordinate identity while leaving poke identity exact;
-2. **passive aliasing** can leave two states indistinguishable while three reversible pokes identify them exactly;
-3. the pairwise **response geometry** is unchanged by arbitrary sensory-code relabeling;
-4. if action identity is discarded, reciprocal response patterns collapse — binding the consequence to the issued action matters.
-
-This is only a mechanism sanity check. It earns vocabulary, not consciousness.
-
-Run:
+The repo uses the Python standard library. Individual gates can be run directly, for example:
 
 ```bash
-python experiments/gate0_poke_invariance.py
+python experiments/gate15_three_timescale_observer.py
+python experiments/gate16_silent_drift_audit_cost.py
+python experiments/gate17_hazard_plus_safety_floor.py
+python experiments/gate18_unknown_change_bound.py
 ```
 
-## The strongest version of the thought
+GitHub Actions runs the complete G0–G18 sequence on Python 3.12.
 
-A quale candidate is not
+## Lineage
 
-```text
-RED = neuron 1847
-RED = latent [0.2, -0.7, ...]
-RED = 37 Hz
-```
+This repo is downstream of several related experiments:
 
-but something closer to
-
-```text
-RED = its location in the agent's learned web of
-      action-conditioned possible consequences,
-      similarities, transitions, memories and affordances.
-```
-
-This is history dependent. Let
-
-```text
-Q_t = Q(x_t, m_t, theta_t)
-```
-
-where
-
-- `x_t` is fast current state,
-- `m_t` is medium history / expectation,
-- `theta_t` is slower structure that determines which distinctions are easy, costly or even available.
-
-Then a computational "moment" is not a frozen feature vector. It is a cross-section through:
-
-```text
-what is happening
-+
-what I can do to it
-+
-what I expect my actions to do
-+
-what happened before
-+
-which distinctions my slower structure has learned to preserve
-```
-
-Repeated active interrogation may eventually be compiled into structure. What initially required
-
-```text
-look -> poke -> compare -> poke again -> confirm
-```
-
-can later become
-
-```text
-I see it.
-```
-
-That is one possible route from active discovery to perceptual immediacy without pretending that immediacy proves phenomenology.
-
-## Direct collision with prior art
-
-The broad idea is **not new**. O'Regan & Noë's sensorimotor contingency theory explicitly argues that qualitative character depends on laws linking action and sensory change. Predictive-state representations describe state by action-conditional predictions. Bisimulation groups states by behaviorally relevant action-conditioned futures. Contemporary quality-space / structural approaches study phenomenal character relationally rather than as isolated labels.
-
-So the research question here is narrower:
-
-> **Can we build a rigorous intervention-defined quality space that is invariant to irrelevant implementation coordinates, depends on owned action-consequence binding, survives strong passive and representation attackers, and composes with memory and slow operator change?**
-
-See [`PRIOR_ART.md`](PRIOR_ART.md).
-
-## Lineage in these repos
-
-This repo is downstream of several already-executed ideas rather than a fresh philosophical bolt from nowhere:
-
-- [ReadWrite](https://github.com/anttiluode/ReadWrite) — passive ambiguity can sometimes be resolved only by a state-dependent write/intervention: actuator as sense organ.
-- [AlternativeNeuron](https://github.com/anttiluode/AlternativeNeuron) — active poke, medium memory, self/world attribution, efference, coordinate-invariant dynamical objects.
-- [GeometricNeuronV24](https://github.com/anttiluode/GeometricNeuronV24) — paid addressed sensing, information-gain poke selection and persistent WRITE.
-- [RajoitustenHierarkia](https://github.com/anttiluode/RajoitustenHierarkia) — prediction -> action/efference -> consequence -> residual -> targeted diagnosis.
-- [WidePresent](https://github.com/anttiluode/WidePresent) — ordered history can be part of current state; a frozen instant can alias moving states.
-- [PresentMoment](https://github.com/anttiluode/PresentMoment) — current state can physically contain multiscale residues of previous interaction.
+- [ReadWrite](https://github.com/anttiluode/ReadWrite) — intervention as an additional sense when passive states alias.
+- [AlternativeNeuron](https://github.com/anttiluode/AlternativeNeuron) — active poke, medium memory, efference and coordinate-invariant dynamical objects.
+- [GeometricNeuronV24](https://github.com/anttiluode/GeometricNeuronV24) — paid addressed sensing, information-gain probe selection and persistent WRITE.
+- [RajoitustenHierarkia](https://github.com/anttiluode/RajoitustenHierarkia) — prediction → action/efference → consequence → residual → targeted diagnosis.
+- [WidePresent](https://github.com/anttiluode/WidePresent) — ordered history can be necessary to disambiguate a current state.
 - [AuditedEpistemicCache](https://github.com/anttiluode/AuditedEpistemicCache) — purchased consequences become expectations that can be reused, audited and invalidated.
 
-The progression is:
+See [`PRIOR_ART.md`](PRIOR_ART.md) for the repo's prior-art fence.
+
+## Where to go next
+
+There is deliberately no preregistered **Gate 19** merely to continue the sequence. A next branch should earn its existence by adding either a genuinely new mechanism or a real application.
+
+The obvious engineering descendants are:
 
 ```text
-passive state
-   -> active distinction
-   -> owned action/consequence
-   -> remembered counterfactual relation
-   -> coordinate-invariant predictive object
-   -> slow compilation into future perceptual structure
+active fault diagnosis
+adaptive monitoring
+sensor scheduling
+audited caches
+change detection
+bounded system identification
+fast / medium / slow observers
 ```
 
-## Kill conditions
+The consciousness question remains open outside what these programs establish.
 
-This repo should become less interesting if any of these happen:
-
-- a passive representation with equal information reproduces every claimed distinction;
-- the candidate changes under arbitrary internal relabeling that preserves action-conditioned futures;
-- an unordered bag of sensory consequences performs as well as correctly bound action->consequence pairs;
-- simple predictive-state / bisimulation machinery already captures every useful result with no extra constraint;
-- efference is unnecessary once fair controls are included;
-- the proposed geometry predicts no behavioral or learning consequence beyond ordinary state estimation;
-- a claimed "qualia" result is only a classifier accuracy result in fancy language.
-
-## Stopping line
-
-Even a perfect result here would establish, at most, a **computational structure with properties we might want from a qualia candidate**:
-
-- perspectival anchoring,
-- counterfactual depth,
-- discrimination by action,
-- invariance to arbitrary coordinate relabeling,
-- history dependence,
-- agent-relative equivalence classes.
-
-It would **not** explain why any of that should feel like anything.
-
-That explanatory gap stays open.
-
-The repo is allowed to end there.
-
-**Billiards of the soul: not because the billiard balls are conscious, but because touching the world and receiving the rebound may be part of what gives a perceptual world its agent-relative shape.**
+**Billiards of the soul** remains the repo name because the originating intuition was about touching a world and receiving its rebound. The executable result is simpler: sometimes the rebound contains information you cannot get by looking, and sometimes no amount of memory can replace a rebound you never measured.
