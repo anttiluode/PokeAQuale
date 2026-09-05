@@ -26,3 +26,5 @@ jobs:
         run: python experiments/gate5_active_to_immediate_distillation.py
       - name: Gate 6 — automorphism stopping line
         run: python experiments/gate6_automorphism_stopping_line.py
+      - name: Gate 7 — cross-embodiment alignment
+        run: python experiments/gate7_cross_embodiment_alignment.py
