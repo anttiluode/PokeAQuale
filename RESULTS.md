@@ -6,139 +6,146 @@ Every gate below is a finite / synthetic mechanism test. None is evidence that t
 
 | gate | attacker / question | result | status of the idea |
 |---|---|---|---|
-| G0 | Can raw code relabeling destroy the candidate? Does action identity matter? | raw-code cross-embodiment identity `0%`; action-bound poke identity `100%`; passive and unordered-response attackers `50%` | An action-conditioned response geometry can be coordinate-invariant in this toy, and action→response binding matters. |
-| G1 | Does adding actions change the world partition while world + passive sensor stay fixed? | operational classes `1 → 2 → 4 → 8` as actions are added | The quotient is embodiment/action-repertoire relative by construction. |
-| G2 | Are passive, one-step, or unordered response statistics enough? | all three attackers `50%`; ordered two-step predictive profile `100%` | Multi-step action-conditioned history can contain distinctions erased by cheaper summaries. This is predictive-state territory, not a qualia result. |
-| G3 | Does efference distinguish SELF from a matched WORLD event? | sensory-only / unordered bag `50%`; bound command→consequence lag `100%`; perfect external mimic remains `50%` even with full supplied transcript | Efference can add causal attribution only when the causal stories differ operationally. Perfect mimics are an explicit stopping line. |
-| G4 | Can remembered counterfactuals by themselves make an exactly aliased present state immediately identifiable? | no-memory `40` pokes; remembered relation library still `40`; ordinary stable-key lookup only `8`; stale unversioned lookup after key remap `0%` accuracy | **Negative.** Memory does not manufacture missing current evidence. |
-| G5 | Can active discovery be compiled into later zero-poke perception, and is special machinery needed? | poke-labelled passive compiler `100%`, `0` test pokes after `384` calibration pokes; ordinary supervised centroid on same targets is identical; old compiler after representation remap `0%`, active poke route stays `100%` | Active identification can teach an immediate shortcut, but ordinary supervised distillation fully explains it here. |
-| G6 | Can complete action-conditioned structure settle a globally inverted / permuted quality labelling? | six-state ring has **6** zero-error action-preserving cross-agent isomorphisms; actual hidden shift is only one of them; one extra external anchor collapses ambiguity to `1` map | **Stopping line.** Relational intervention geometry fixes structure, not an absolute semantic origin when nontrivial automorphisms remain. |
-| G7 | Can two differently encoded agents align qualities across embodiments? What if passive geometry is a false friend? | honest passive metric + affine alignment: `100%` with zero residual; deliberately reattached but still perfectly isometric passive geometry: `0%` semantic correspondence with zero residual; transition-only leaves `6` exact maps; shared three-action consequence profile recovers `100%` true correspondence | Interventions are **not always needed**. Passive relational geometry wins when causally honest, but beautiful passive structure can be exactly wrong. |
-| G8 | Is an endogenous homeostatic / body consequence intrinsically stronger than an equally informative external marker? | body effect + transitions leaves exactly `1` true map; a matched external beacon with the same pattern also leaves exactly `1` true map | **Negative on privilege.** Homeostatic consequence can break symmetry, but symmetry-breaking alone is ordinary information. |
-| G9 | If BODY and BEACON are perfectly correlated, can the agent identify which one changes its future ability to act and sense? | passive/current/history attackers `50%`; decoupling interventions identify the causal driver at `100%`; BODY changes future actions, sensors and reachability while BEACON does not; exact external causal clone restores `50%` internal/external identifiability | **Positive but ordinary.** This is intervention-based system identification. |
-| G10 | Does a hand-labelled SELF factor buy anything beyond generic causal abstraction? | passive shortcut fails correlation reversal; hand-labelled SELF transfers `100%`; generic no-SELF causal bottleneck also transfers `100%` after `3` calibration interventions at the same model size; external REMOTE driver is discovered just as well | **SELF loses as a computational primitive here.** The useful object is a reusable causal sufficient statistic. |
-| G11 | Does causal control of future affordances define `good` and `bad`? | same dynamics: empowerment/viability choose `PRESERVE`; task reward/reversed viability choose `COLLAPSE`; utility inversion flips policy; generic planner matches all | **Hard negative on intrinsic valence from dynamics alone.** Causal structure determines consequence; an objective determines value. |
-| G12 | Can a unique objective be recovered from complete optimal behavior? | BASE, potential-shaped BASE, and a distinct ALTERNATE all explain the same optimal policy; one off-policy B-vs-C preference query removes ALTERNATE, but BASE and SHAPED remain numerically different while preserving every supplied complete-path preference and optimal choice | **Hard negative on unique value origin from behavior.** Behavior constrains a reward equivalence class. Extra preference evidence can shrink it, but policy/preference-equivalent reward transformations remain. |
+| G0 | Can raw code relabeling destroy the candidate? Does action identity matter? | raw-code cross-embodiment identity `0%`; action-bound poke identity `100%`; passive and unordered-response attackers `50%` | Action-conditioned response geometry can be coordinate-invariant in this toy. |
+| G1 | Does adding actions change the world partition while world + passive sensor stay fixed? | operational classes `1 → 2 → 4 → 8` | The quotient is embodiment/action-repertoire relative. |
+| G2 | Are passive, one-step, or unordered statistics enough? | all `50%`; ordered two-step predictive profile `100%` | Multi-step action-conditioned history contains distinctions erased by cheaper summaries. |
+| G3 | Does efference distinguish SELF from a matched WORLD event? | sensory/unordered `50%`; command→consequence lag `100%`; perfect external mimic remains `50%` | Efference helps only when causal stories differ operationally. |
+| G4 | Can remembered counterfactuals manufacture current evidence? | relation memory still needs `40` pokes; stable key lookup `8`; stale remapped lookup `0%` | **Negative.** Memory does not create missing observation. |
+| G5 | Can active discovery become later zero-poke perception? | compiled passive route `100%`; ordinary supervised centroid identical; old compiler after remap `0%`, active route `100%` | Active identification can teach a shortcut, but ordinary distillation explains it here. |
+| G6 | Can complete action-conditioned structure settle an inverted / permuted spectrum? | `6` zero-error isomorphisms; one external anchor collapses to `1` | **Stopping line.** Structure fixes relations, not absolute semantic origin. |
+| G7 | Can passive geometry align different embodiments? | honest geometry `100%`; perfectly isometric false-friend geometry `0%` semantic correspondence; causal consequence restores `100%` | Passive geometry can win or be exactly wrong about cause. |
+| G8 | Is a homeostatic anchor privileged over matched external information? | BODY and matched BEACON break symmetry equally | **Negative on privilege.** Endogenous naming is not mathematical privilege. |
+| G9 | Which correlated variable actually changes future action/sensing capacity? | passive/current/history `50%`; decoupling identifies driver `100%`; external causal clone restores internal/external ambiguity | **Positive but ordinary.** Intervention-based system identification. |
+| G10 | Does hand-labelled SELF beat generic causal abstraction? | SELF `100%`; generic no-SELF bottleneck also `100%` after `3` interventions at same model size; REMOTE driver works equally | **SELF loses as computational primitive here.** Useful object is a causal sufficient statistic. |
+| G11 | Does future-affordance causality define good/bad? | same dynamics: empowerment/viability choose `PRESERVE`; task/reversed viability choose `COLLAPSE`; utility inversion flips policy | **Hard negative.** Causal consequence is not canonical valence. |
+| G12 | Can behavior reveal a unique reward? | three rewards fit same optimal policy; one preference query removes one; BASE and potential-shaped BASE remain numerically different yet preference/policy equivalent | **Hard negative.** Behavior constrains a reward equivalence class. |
+| G13 | Can evolutionary selection make a population look as if individuals value viability? | old regime: explicit noisy viability planner and reward-free selection-only population both `90% PRESERVE / 10% COLLAPSE`; after survival-map reversal planner immediately becomes `10/90`, selection-only stays `90/10` and survives at only `10%`; after differential survival + reproduction the next selection-only generation becomes `10/90` | **Yes.** Mature survival-oriented behavior does not prove a represented objective. A temporal intervention exposes planner adaptation versus generational filtering. |
 
-## The hypothesis after twelve attacks
+## The hypothesis after thirteen attacks
 
-The executable story is now:
+The executable core is now much less philosophical and much more useful:
 
 ```text
-active intervention
- -> predictive / causal identity
- -> cheap learned shortcuts while stable
- -> re-grounding when shortcuts break
+bounded observation
+ -> intervene when evidence is insufficient
+ -> identify action-conditioned causal state
+ -> compress stable causal relations into cheap predictors
+ -> re-ground when shortcuts fail
  -> discover variables controlling future affordances
- -> compress them into transferable causal bottlenecks
- -> plan only relative to an objective
- -> infer at most an equivalence class of objectives from behavior
+ -> plan relative to explicit / inferred objective classes
+ -> separate within-lifetime control from population-level selection
 ```
 
 The strongest computational claim presently earned is:
 
-> **A bounded agent can use intervention-conditioned futures to discover transferable causal sufficient statistics for future action/sensing possibilities. Those statistics can support objective-relative planning, and behavior can provide evidence about an objective.**
+> **Intervention can recover comparatively invariant causal state from ambiguous representations; stable causal state can be compressed into cheap predictors; slow population history and fast within-lifetime inference are distinct mechanisms and can be separated by perturbation.**
 
-The stopping lines are stronger:
-
-```text
-causal structure != semantic origin
-causal role      != SELF
-future affordance!= valence
-behavior         != unique reward
-```
-
-> **Causal structure gives consequence; an objective gives value; behavior need not reveal a unique objective.**
-
-Nothing so far requires privileged SELF vocabulary, intrinsic inside/outside semantics, canonical valence, or phenomenology.
-
-## Gate 12 result — value has its own equivalence class
-
-The decision process has one meaningful choice at `START`:
+The hard fences now read:
 
 ```text
-A -> SA -> T
-B -> SB -> T
-C -> SC -> T
+causal structure    != semantic origin
+causal role         != SELF
+future affordance   != valence
+behavior            != unique reward
+survival selection  != represented objective
+represented objective != phenomenology
 ```
 
-All complete paths share the same start and terminal state.
+That is a better research result than a loose qualia story.
 
-Three reward models are supplied. `BASE` ranks the paths `A > B > C`. `ALTERNATE` ranks them `A > C > B`, so it has the same optimal action but disagrees about off-policy preference. `SHAPED` is generated from BASE by
+## Gate 13 result — evolution can fake the appearance of caring
+
+The test deliberately makes the mature snapshot identical under two mechanisms.
+
+In the original survival regime, `PRESERVE` survives. The explicit planner chooses the currently viable action with `10%` execution noise. The selection-only population contains fixed inherited controllers, no reward and no learning; survivors reproduce with `10%` mutation.
+
+Both mature populations therefore look exactly like:
 
 ```text
-r'(s,a,s') = r(s,a,s') + gamma * Phi(s') - Phi(s)
+PRESERVE  90%
+COLLAPSE  10%
 ```
 
-and changes the numerical immediate rewards substantially.
+From that snapshot alone, `this population behaves as if it values survival` is true descriptively but does not identify the mechanism.
 
-Yet all three reward models explain the complete demonstrated optimal policy: choose `A`. Behavior alone therefore leaves three candidates.
-
-An extra preference query asks whether the agent prefers the complete B-path or C-path. The answer `B` removes ALTERNATE. That is useful evidence, but it was *new evidence*.
-
-BASE and SHAPED survive together. Because every compared path has the same start and terminal state, the shaping terms telescope to the same constant offset. Their numerical reward tables differ, but every supplied pairwise complete-path preference and the optimal policy are identical.
-
-So Gate 12 earns:
-
-> **Choice can constrain value without identifying a unique numerical value function. Operationally equivalent rewards form another quotient.**
-
-This is standard inverse-reward ambiguity, not a claim about felt valence.
-
-There is now an interesting symmetry with G6:
+Then the survival mapping is reversed.
 
 ```text
-G6: semantic labels can vary under an operational automorphism.
-G12: reward labels can vary under a policy/preference-preserving transformation.
+                    immediately after reversal
+explicit planner    10% PRESERVE / 90% COLLAPSE
+selection only      90% PRESERVE / 10% COLLAPSE
 ```
 
-In both cases the correct answer is an equivalence class unless extra evidence breaks it.
+The planner survives the first exposure at `90%`; the inherited selection-only population at only `10%`. Differential survival leaves the COLLAPSE lineage, and its offspring with `10%` mutation produce the new `10/90` distribution one generation later.
 
-## Gate 13 preregistration — can selection masquerade as an intrinsic objective?
+So selection can create the *appearance* of a viability preference without a within-agent viability representation. The difference becomes visible when the environment changes faster than heredity can track it.
 
-Another escape route is evolution:
+The narrow result earned is:
 
-> perhaps survival itself supplies the value function.
+> **Evolutionary filtering and within-lifetime valuation can be behaviorally identical at equilibrium yet causally distinct under temporal intervention.**
 
-But population filtering can produce survival-oriented behavior without any within-agent reward representation.
+No evolutionary fitness variable is thereby felt valence.
 
-Construct two mechanisms that produce the same observed mature behavior:
+## Gate 14 preregistration — let slow history tune inquiry, not truth
+
+There is a constructive result hiding behind G13.
+
+Slow selection / adaptation can legitimately provide a **prior over which causal hypotheses are worth testing first**, while fast intervention remains responsible for correcting that prior when the current world differs.
+
+That gives a clean fast/slow architecture:
 
 ```text
-A. EXPLICIT PLANNER
-   agent evaluates viability and chooses PRESERVE
+slow history
+  -> prior over likely causal drivers / useful probes
 
-B. SELECTION ONLY
-   inherited fixed controllers have no reward or learning
-   some choose PRESERVE, some COLLAPSE
-   environment removes the COLLAPSE lineages
-   mature population therefore chooses PRESERVE
+fast episode
+  -> cheap first probe chosen from prior
+  -> prediction error / contradiction
+  -> additional interventions only when needed
+  -> current causal identification
 ```
 
-Mandatory tests:
+Gate 14 should compare three agents across a family of environments where one of several variables controls future affordance and the dominant driver changes occasionally:
 
-- match the mature action distribution between explicit-planner and selection-only populations;
-- verify selection-only individuals contain no reward/utility update machinery;
-- reverse the survival mapping experimentally;
-- an explicit planner with access to the new consequences should change policy immediately, while hereditary selection should initially retain its old controller distribution and change only through differential survival/reproduction;
-- if only the selected mature snapshot is observed, do not infer an internal viability objective;
-- no evolutionary fitness quantity is to be called felt valence.
+```text
+1. FIXED PRIOR ONLY
+   cheap, brittle
 
-The narrow result worth earning is:
+2. UNIFORM ACTIVE IDENTIFICATION
+   robust, but pays every probe
 
-> **Selection can make a population look as if it values viability even when no individual controller represents viability as an objective; intervention on the selection regime and temporal response can distinguish the mechanisms.**
+3. SLOW-PRIOR + FAST-CORRECTION
+   tries historically likely probes first,
+   but falls back to active identification on contradiction
+```
 
-That would fence off one more common slide: evolutionary function is not automatically within-agent value, and within-agent value is not automatically experience.
+Mandatory metrics:
 
-## Current philosophical boundary
+- causal-driver accuracy;
+- average paid interventions;
+- performance on common environments;
+- performance immediately after distribution shift;
+- recovery cost after shift;
+- fixed-prior failure rate;
+- comparison against an oracle ordering of probes.
 
-The repo can investigate agent-relative distinguishability, causal anchoring, transferable causal state, self-maintaining control, objective-relative planning, and reward identifiability. It cannot infer that any of these structures feel like anything.
+Kill conditions:
 
-G6: if an automorphism preserves every available action-conditioned relation, no hidden semantic origin can be recovered.
+- if the hybrid cannot reduce intervention cost while retaining the uniform learner's accuracy, slow history added nothing useful;
+- if the hybrid fails permanently after a shift, it is just a brittle inherited shortcut;
+- if a generic Bayesian / sequential-testing account explains the result, say so plainly;
+- no prior, error signal or objective is to be promoted to qualia.
 
-G10: if generic causal abstraction reproduces the SELF-labelled computation, the result belongs to causal representation learning, not privileged selfhood.
+The narrow positive result worth earning is:
 
-G11: fixed dynamics support opposite preferences under different objectives, so preserving future options is not a canonical good.
+> **Slow experience can compile an intervention policy that makes recurrent causal identification cheaper, while fast counterfactual testing preserves adaptability when the world changes.**
 
-G12: even complete optimal behavior and added preference evidence can leave numerically distinct reward functions operationally equivalent.
+That would reconnect PokeAQuale directly to the broader bounded-observer / fast-medium-slow architecture without smuggling consciousness back in.
 
-These are not temporary missing features. They are part of the current theory's definition.
+## Current boundary
+
+PokeAQuale now has a useful positive program: intervention-defined causal identity, cheap learned prediction, causal bottlenecks, and multiscale adaptation.
+
+It also has explicit stopping lines for semantic origin, self labels, valence, reward identity, and evolutionary fitness.
+
+The repo can study all of those computational mechanisms. It still has no executable bridge from them to subjective experience.
