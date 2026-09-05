@@ -14,8 +14,9 @@ Every gate below is a finite / synthetic mechanism test. None is evidence that t
 | G5 | Can active discovery be compiled into later zero-poke perception, and is special machinery needed? | poke-labelled passive compiler `100%`, `0` test pokes after `384` calibration pokes; ordinary supervised centroid on same targets is identical; old compiler after representation remap `0%`, active poke route stays `100%` | Active identification can teach an immediate shortcut, but ordinary supervised distillation fully explains it here. The shortcut is cheap and brittle; the intervention identity is expensive and invariant. |
 | G6 | Can complete action-conditioned structure settle a globally inverted / permuted quality labelling? | six-state ring has **6** zero-error action-preserving cross-agent isomorphisms; actual hidden shift is only one of them; one extra external anchor collapses ambiguity to `1` map | **Stopping line.** Relational intervention geometry fixes structure, not an absolute semantic origin when nontrivial automorphisms remain. |
 | G7 | Can two differently encoded agents align qualities across embodiments? What if passive geometry is a false friend? | honest passive metric + affine alignment: `100%` with zero residual; deliberately reattached but still perfectly isometric passive geometry: `0%` semantic correspondence with zero residual; transition-only leaves `6` exact maps; shared three-action consequence profile recovers `100%` true correspondence | Interventions are **not always needed**. Passive relational geometry wins when it is causally attached correctly. But beautiful passive structure can be exactly wrong about causal identity; shared consequences can supply the missing anchor. |
+| G8 | Is an endogenous homeostatic / body consequence intrinsically a stronger semantic anchor than an equally informative external marker? | transition-only leaves `6` maps; repeated-valued body effect + transitions leaves exactly `1` true map; a matched external beacon with the same pattern also leaves exactly `1` true map | **Negative on privilege.** Homeostatic consequence can break an operational symmetry, but symmetry-breaking alone is ordinary information. A matched external asymmetry does identical alignment work. Any stronger claim must use the body's effect on future control / viability, not merely its label value. |
 
-## The hypothesis after seven attacks
+## The hypothesis after eight attacks
 
 The original tempting story was:
 
@@ -52,6 +53,12 @@ passive relational geometry may align agents for free
 may be an exact isomorphic false friend
  -> shared causal consequences can anchor correspondence
 
+ENDOGENOUS ANCHOR ROUTE
+body-affecting consequence can break a symmetry
+ BUT
+matched external information can break the same symmetry
+ -> endogenous location alone has not earned special status
+
 SYMMETRY LIMIT
 if every available action-conditioned relation is preserved
  -> no operational test can recover an extra hidden semantic fact
@@ -59,43 +66,81 @@ if every available action-conditioned relation is preserved
 
 So the strongest computational claim presently earned is:
 
-> **An intervention-defined predictive profile can serve as a comparatively invariant operational identity and causal anchor when passive representation is ambiguous or misleading. Immediate perception can be a cheaper learned predictor of that identity. Neither route supplies an absolute semantic origin when the full operational structure remains symmetric.**
+> **An intervention-defined predictive profile can serve as a comparatively invariant operational identity and causal anchor when passive representation is ambiguous or misleading. Immediate perception can be a cheaper learned predictor of that identity. Endogenous bodily consequence can supply an anchor, but its mere informational asymmetry is not privileged over an external cue. Neither route supplies an absolute semantic origin when the full operational structure remains symmetric.**
 
 That is useful even if the word `quale` is eventually removed from the project.
 
-## Gate 7's new cheat
+## Gate 8's surviving question: consequence that changes the observer
 
-The shared action-conditioned profile in G7 is itself already an anchor.
-
-Both agents agree on things like:
+G8 kills the cheap move:
 
 ```text
-"action 0 produced consequence 1"
-"action 1 produced consequence 0"
+"it affects homeostasis"
+ -> therefore the signal is intrinsically for-me
+ -> therefore qualia
 ```
 
-That is much weaker than sharing raw sensory coordinates, but it is still shared semantics. If the action names and consequence symbols are also independently relabelled, correspondence again becomes a graph-isomorphism / symmetry problem.
+The body channel won only because it carried symmetry-breaking information. The external beacon carried the same information and won identically.
 
-So the next deep question is no longer merely cross-sensory alignment. It is:
-
-> **What can serve as a non-arbitrary semantic anchor for one organism from inside its own causal loop?**
-
-A promising candidate is not a label like `RED`, nor even a shared experimenter's bit. It is **consequence to the organism itself**:
+The next claim worth testing is different. A bodily consequence can alter the **future counterfactual repertoire of the observer itself**:
 
 ```text
-viability
-homeostatic error
-pain / damage
-reward / relief
-controllability
-energy cost
-approach / avoidance
-persistent body change
+state / event
+ -> body change
+ -> future action capacity changes
+ -> future sensing opportunities change
+ -> future control and viability change
 ```
 
-Those quantities are still computational and do not establish feeling. But unlike an experimenter-supplied color name, they can be endogenous to the agent's continued operation. They may therefore break some otherwise free automorphisms and provide a stronger notion of "for this system".
+That suggests a richer operational object than a response label:
 
-That should be attacked next.
+```text
+Q_emb(x,b)
+  = distribution over future observations,
+    body states,
+    available actions,
+    costs and consequences
+    under candidate interventions
+```
+
+This is still computational. It is not a theory of feeling. But it gives a precise meaning to one part of `for this system`: some variables recursively change the system's own ability to continue probing and controlling the world.
+
+## Gate 9 preregistration — body versus matched beacon after causal decoupling
+
+Construct two channels that are perfectly correlated during ordinary observation and calibration:
+
+```text
+BODY   -> changes an internal capacity variable
+BEACON -> emits the same currently observable value
+```
+
+Then intervene to decouple them.
+
+Mandatory tests:
+
+```text
+1. passive-only predictor before decoupling
+2. current-value / lookup attacker
+3. history-only attacker
+4. BODY intervention
+5. BEACON intervention
+6. future-action-set prediction
+7. future-observability / reachable-state prediction
+8. oracle causal graph
+```
+
+The intended distinction is not that BODY is internal by name. It is that changing BODY should change later affordances while changing BEACON should not.
+
+Kill conditions:
+
+- if a passive or current-value attacker predicts the causal distinction without observing any decoupling evidence, the setup leaked the answer;
+- if BEACON intervention changes future affordances exactly as BODY does, the test has not separated self-affecting from merely informative variables;
+- if an ordinary causal-discovery / system-identification description fully explains the result, the repo must say so rather than promote it to phenomenology;
+- if an external causal clone is wired to control the same future action repertoire, internal/external location alone must again be treated as operationally unidentifiable.
+
+The narrow result worth earning is only:
+
+> **A bounded agent can identify variables that causally alter its own future action/sensing repertoire, rather than merely correlate with those variables.**
 
 ## Current philosophical boundary
 
@@ -109,4 +154,8 @@ G7 adds:
 
 > A causal anchor only helps because something about its action/consequence vocabulary is shared or internally privileged. Calling the anchor `causal` does not make its semantics free.
 
-That is not a temporary missing feature. It is part of the current theory's definition.
+G8 adds:
+
+> Calling a symmetry-breaking consequence `homeostatic`, `pain`, `reward`, or `body` does not make the information mathematically privileged. A stronger self-related claim has to depend on how the consequence changes the observer's own future causal possibilities.
+
+These are not temporary missing features. They are part of the current theory's definition.

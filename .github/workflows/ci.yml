@@ -28,3 +28,5 @@ jobs:
         run: python experiments/gate6_automorphism_stopping_line.py
       - name: Gate 7 — cross-embodiment alignment
         run: python experiments/gate7_cross_embodiment_alignment.py
+      - name: Gate 8 — homeostatic anchor
+        run: python experiments/gate8_homeostatic_anchor.py
