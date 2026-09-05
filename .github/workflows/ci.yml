@@ -32,3 +32,5 @@ jobs:
         run: python experiments/gate8_homeostatic_anchor.py
       - name: Gate 9 — future-affordance causality
         run: python experiments/gate9_future_affordance_causality.py
+      - name: Gate 10 — causal bottleneck versus SELF
+        run: python experiments/gate10_causal_bottleneck_vs_self.py
